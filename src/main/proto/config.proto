@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package exonum.timestamping;
+
+option java_package = "com.exonum.binding.timestamping";
+
+// Timestamping service configuration parameters.
+message ServiceConfiguration {
+  // The name of a time oracle service instance to use.
+  string time_oracle_name = 1;
+}

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package exonum.timestamping;
+
+option java_package = "com.exonum.binding.timestamping.transactions";
+option java_outer_classname = "TxMessageProtos";
+
+import "google/protobuf/timestamp.proto";
+
+message Hash {
+  bytes data = 1;
+}
+
+message CreateCounterTxBody {
+  string name = 1;
+}
+
+message TimestampTxBody {
+  bytes content_hash = 1;
+  string metadata = 2;
+}
+
+message TimestampEntry {
+  // Timestamp data.
+  TimestampTxBody timestamp = 1;
+  // Hash of transaction.
+  bytes tx_hash = 2;
+  // Timestamp time.
+  google.protobuf.Timestamp time = 3;
+}
